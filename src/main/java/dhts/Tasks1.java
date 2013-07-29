@@ -49,11 +49,11 @@ public class Tasks1 {
 
         /*
         Bakgrunn:
-        map(), bind()
+        Command pattern, programmer, interpreter, map(), bind().
 
         5)
-        Dao metodene eksponerer delt endrebar tilstand, dvs at de ikke er trådsikre, og Books endrer tilstand mellom hvert kall. Dette ønsker vi å unngå.
-        Lag en eller flere sorter som represtenterer db-operasjoner og data uten at daoen faktisk endrer tilstand, med mindre man kjører en execute/commit/performIO eller lignende.
+        Dao metodene eksponerer delt endrebar tilstand og Books endrer tilstand mellom hvert kall. Dette ønsker vi å unngå.
+        Lag en eller flere sorter som represtenterer db-operasjoner og data uten at daoen faktisk endrer tilstand.
         Endre dao-funksjoner for å reflektere dette.
          */
 
@@ -64,6 +64,20 @@ public class Tasks1 {
         Endre sortene slik at de kan settes sammen.
          */
 
+
+        /*
+        Bakgrunn:
+        fold()
+         */
+
+        /*
+        Sett det hele sammen:
+
+        Skriv en funksjon som skal sjekke isbn nummeret til en bok, og gjøre alle bokstaver i den til uppercase.
+          Skriv så et lite program som ved hjelp av en id laster inne en bok, endrer nummeret på den, lagrer den oppdaterte versjonen og returnerer en indikasjon på om operasjonen var vellykket eller ikke.
+          (Hint, hvis du kan: Lag programmet som en sort som du kan returnere, og som kan kjøres av en interpreter)
+
+         */
 
 
     }
