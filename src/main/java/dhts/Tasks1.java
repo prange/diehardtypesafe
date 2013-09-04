@@ -22,7 +22,7 @@ public class Tasks1 {
 
         /*
         3)
-        Når man jobber med databaser er det vanlig å ha et id felt i objektene som lagres. Det er også vanlig å gjøre en Null-sjekk op id i dao laget for å sjekke om et objekt er nytt eller "gammelt"
+        Når man jobber med databaser er det vanlig å ha et id felt i objektene som lagres. Det er også vanlig å gjøre en Null-sjekk på id i dao laget for å sjekke om et objekt er nytt eller "gammelt"
         Når man lagrer et tidligere ulagret objekt får man ofte tilbake de samme objektet med id, eller bare en id tilbake.
 
         Nå skal vi fjerne denne tvedydigheten om et objekt er lagret eller ulagret:
