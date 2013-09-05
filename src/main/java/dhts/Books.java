@@ -2,13 +2,16 @@ package dhts;
 
 import fj.F;
 import fj.F2;
+import fj.data.Either;
 import fj.data.List;
 import fj.data.Option;
+import fj.data.Validation;
 import fj.test.Arbitrary;
 import fj.test.Gen;
 
 import java.util.HashMap;
 import java.util.Map;
+import java.util.UUID;
 
 public class Books {
 
@@ -23,33 +26,13 @@ public class Books {
                 return Gen.elements( Option.<String>none() );
         }
     } );
-
-    public static Gen<Book> bookGenerator = titleGenerator.bind(isbnGenerator,new F2<String, String, Book >() {
+    public static Gen<Book> bookGenerator = titleGenerator.bind( optionalIsbnGenerator, new F2<String, Option<String>, Book>() {
         @Override
-        public Book f(String s1,String s2) {
-            return new Book(s1,s2);
+        public Book f(String s1, Option<String> s2) {
+            return new Book( s1, s2 );
         }
     }.curry() );
-
     public static Gen<List<Book>> bookListGenerator = Gen.listOf( bookGenerator );
 
-    //DAO functions
 
-    private static Map<Object,Book> books = new HashMap<Object, Book>(  );
-
-    public static Book save(Book book){
-
-    }
-
-    public static void update(Book book){
-
-    }
-
-    public static Book saveOrUpdate(Book book){
-
-    }
-
-    public static Book load(Object id){
-
-    }
 }

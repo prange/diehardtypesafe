@@ -1,6 +1,8 @@
 package dhts;
 
+import fj.F;
 import fj.data.List;
+import fj.data.Option;
 import fj.test.Rand;
 
 public class Tasks1 {
@@ -71,7 +73,38 @@ public class Tasks1 {
          */
 
 
+        Saved<Book> savedBook = new Saved<Book>( "id", new Book( "title", Option.some("isbn") ) );
+
+
+        Saved<String> savedString = savedBook.map( new HentTittel() );
+
+
     }
 
 
+    static interface F<A, B> {
+        public B execute(A a);
+    }
+
+    static class Saved<T> {
+        public final String id;
+        public final T content;
+
+        Saved(String id, T content) {
+            this.id = id;
+            this.content = content;
+        }
+
+        public <B> Saved<B> map(F<T, B> f) {
+            return new Saved( id, f.execute( content ) );
+        }
+    }
+
+    static class HentTittel implements F<Book,String>{
+
+        @Override
+        public String execute(Book book) {
+            return book.title;
+        }
+    }
 }
