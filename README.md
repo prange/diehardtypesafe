@@ -1,1 +1,1 @@
-Sjekk [wiki: https://github.com/prange/diehardtypesafe/wiki]
+Sjekk https://github.com/prange/diehardtypesafe/wiki
